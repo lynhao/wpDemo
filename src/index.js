@@ -9,6 +9,10 @@ import './assets/styles/global.styl'
 // const root = document.createElement('div')
 // document.body.appendChild(root)
 
+import Tabs from './component/tabs/index.js'
+
+Vue.use(Tabs)
+
 new Vue({
   render: (h) => h(App)
-}).$mount("#root")
+}).$mount('#root')
