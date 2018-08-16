@@ -2,15 +2,21 @@
   <section class="real-app">
     <div class="tab-container">
       <tabs :value="tabValue" @select="handleTabs">
-      <tab label="tab1" index="1" slot="options"></tab>
+      <tab label="tab1" index="1" slot="options">
+        <span>content1 {{inputValue}}</span>
+      </tab>
       <tab index="2" slot="options">
         <span slot="label">tab2</span>
+        <span>content2</span>
       </tab>
-      <tab label="tab3" index="3" slot="options"></tab>
+      <tab label="tab3" index="3" slot="options">
+        <span>content3</span>
+      </tab>
     </tabs>
     </div>
     <input
       type="text"
+      v-model="inputValue"
       class="add-input"
       autofocus="autofocus"
       placeholder="接下去要做什么？"
@@ -40,7 +46,8 @@ export default {
     return {
       todos: [],
       filter: 'all',
-      tabValue: '1'
+      tabValue: '1',
+      inputValue: ''
     }
   },
   // mounted () {
@@ -120,5 +127,3 @@ export default {
   padding: 0 15px
 }
 </style>
-
-

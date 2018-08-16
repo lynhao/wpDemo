@@ -19,11 +19,10 @@
       }
     },
     mounted () {
-
+      this.$parent.panes.push(this)
     },
     methods: {
       handleSelect (index) {
-        console.log(this.$root)
         this.$parent.onSelect(this.index)
       }
     },

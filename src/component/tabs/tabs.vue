@@ -1,4 +1,5 @@
 <script>
+  import TabContainer from './tab-container.vue'
   export default {
     name: 'Tabs',
     // 这里provide必须是这种写法,如果直接返回一个对象,由于Vue的实例还没创建是拿不到this
@@ -15,10 +16,18 @@
         data
       }
     },
+    components: {
+      TabContainer
+    },
     props: {
       value: {
         type: [String, Number],
         required: true
+      }
+    },
+    data () {
+      return {
+        panes: []
       }
     },
     render () {
@@ -27,6 +36,7 @@
           <ul class="tabs-header">
             {this.$slots.options}
           </ul>
+          <tab-container panes={this.panes}></tab-container>
         </div>
       )
     },
