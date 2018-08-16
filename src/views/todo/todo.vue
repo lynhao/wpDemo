@@ -1,12 +1,14 @@
 <template>
   <section class="real-app">
-    <tabs value="1">
+    <div class="tab-container">
+      <tabs :value="tabValue" @select="handleTabs">
       <tab label="tab1" index="1" slot="options"></tab>
       <tab index="2" slot="options">
-        <span slot="label" style="color:red">tab2</span>
+        <span slot="label">tab2</span>
       </tab>
       <tab label="tab3" index="3" slot="options"></tab>
     </tabs>
+    </div>
     <input
       type="text"
       class="add-input"
@@ -37,9 +39,18 @@ export default {
   data () {
     return {
       todos: [],
-      filter: 'all'
+      filter: 'all',
+      tabValue: '1'
     }
   },
+  // mounted () {
+  //   let i = 3
+  //   setInterval(() => {
+  //     let temp = i % 3
+  //     i ++;
+  //     this.tabValue = temp.toString()
+  //   },1000)
+  // },
   components: {
     Item,
     Helper
@@ -70,6 +81,9 @@ export default {
     },
     clearAllCompleted () {
       this.todos = this.todos.filter(todo => !todo.completed)
+    },
+    handleTabs (value) {
+      this.tabValue = value
     }
   }
 }
@@ -100,6 +114,10 @@ export default {
   padding: 16px 16px 16px 60px;
   border: none;
   box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+}
+.tab-container {
+ background-color: #fff
+  padding: 0 15px
 }
 </style>
 
