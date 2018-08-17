@@ -17,16 +17,17 @@
 </script>-->
 
 <style lang="stylus" module>
-.main-header{
+.main-header
   text-align center
-  h1{
+  h1
     font-size 100px
     color: red
     font-weight 100
     margin 20px
-  }
-}
+  
+
 </style>
-<!-- <docs>
+<!-- 
+<docs>
 #123 = 456
 </docs> -->

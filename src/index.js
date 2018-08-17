@@ -10,8 +10,10 @@ import './assets/styles/global.styl'
 // document.body.appendChild(root)
 
 import Tabs from './component/tabs/index.js'
+import Notification from './component/notification/index.js'
 
 Vue.use(Tabs)
+Vue.use(Notification)
 
 new Vue({
   render: (h) => h(App)

@@ -21,6 +21,7 @@
     <div id="cover"></div>
     <Header></Header>
     <todo></todo>
+     <notification content="test notify" @close="shutdown"></notification>
     <Footer></Footer>
   </div>
 </template>
@@ -30,11 +31,17 @@ import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 import Todo from './views/todo/todo.vue'
 
+console.log(Header.__docs)
+
 export default {
   components: {
     Header,
     Footer,
     Todo
+  },
+  methods: {
+    shutdown () {
+    }
   }
 }
 </script>
