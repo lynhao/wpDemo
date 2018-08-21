@@ -1,5 +1,6 @@
 ## Webpack 原理
 
+
 1. 先解析webpack配置参数,合并shell中的输入和配置文件如webpack.config.js中的参数,最后生成配置结果;
 
 2. 注册所有配置的插件,好让插件监听webpack构建生命周期的事件节点,并作出响应;
